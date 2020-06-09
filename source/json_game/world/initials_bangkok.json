@@ -1,0 +1,342 @@
+{
+	"Locations": {
+		"Ship": {
+			"Atributes": {
+				"Position": {
+					"x": 469.846313,
+					"y": 102.606049
+				}
+			}
+		},
+		"Port": {
+			"Connections": {
+				"Ship": {
+
+				},
+				"Tavern": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": 383.022217,
+					"y": 192.836288
+				}
+			}
+		},
+		"Tavern": {
+			"Atributes": {
+				"Position": {
+					"x": 250,
+					"y": 259.807617
+				}
+			}
+		},
+		"Clearing": {
+			"Connections": {
+				"Forest": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": 86.824089,
+					"y": 295.442322
+				}
+			}
+		},
+		"Dwarfs Hut": {
+			"Items": {
+				"Dragon's Egg": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": -86.824089,
+					"y": 295.442322
+				}
+			}
+		},
+		"Witch Hut": {
+			"Atributes": {
+				"Position": {
+					"x": -250,
+					"y": 259.807617
+				}
+			}
+		},
+		"Forest": {
+			"Connections": {
+				"Port": {
+
+				},
+				"Dwarfs Hut": {
+
+				},
+				"Witch Hut": {
+
+				},
+				"Wizard's Hut": {
+
+				}
+			},
+			"Items": {
+				"Herbs": {
+
+				},
+				"Wood": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": -383.022217,
+					"y": 192.836288
+				}
+			}
+		},
+		"Wizard's Hut": {
+			"Items": {
+				"Elixir": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": -469.846313,
+					"y": 102.606049
+				}
+			}
+		},
+		"Pasture": {
+			"Connections": {
+				"Village": {
+
+				},
+				"Shepherd's Hideout": {
+
+				}
+			},
+			"Items": {
+				"Sheep": {
+
+				},
+				"Horse": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": -500,
+					"y": 0
+				}
+			}
+		},
+		"Road": {
+			"Connections": {
+				"Forest": {
+
+				},
+				"Market": {
+
+				},
+				"Pasture": {
+
+				},
+				"Inn": {
+
+				},
+				"Town Hall": {
+
+				}
+			},
+			"Characters": {
+				"Princess": {
+					"Items": {
+						"Necklace": {
+
+						},
+						"Coins": {
+
+						}
+					}
+				},
+				"Huntman": {
+					"Items": {
+						"Riffle": {
+
+						}
+					}
+				}
+			},
+			"Items": {
+				"Stone": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": -469.846313,
+					"y": -102.606049
+				}
+			}
+		},
+		"Market": {
+			"Characters": {
+				"Merchant": {
+					"Items": {
+						"Coins": {
+
+						}
+					}
+				},
+				"Miss": {
+					"Items": {
+						"Egg": {
+
+						}
+					}
+				}
+			},
+			"Items": {
+				"Notice Board": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": -383.022217,
+					"y": -192.836288
+				}
+			}
+		},
+		"Village": {
+			"Items": {
+				"Well": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": -250,
+					"y": -259.807617
+				}
+			}
+		},
+		"Shepherd's Hideout": {
+			"Atributes": {
+				"Position": {
+					"x": -86.824089,
+					"y": -295.442322
+				}
+			}
+		},
+		"Peasant's Hut": {
+			"Connections": {
+				"Road": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": 86.824089,
+					"y": -295.442322
+				}
+			}
+		},
+		"Inn": {
+			"Items": {
+				"Broom": {
+
+				},
+				"Torch": {
+
+				},
+				"Meal": {
+
+				},
+				"Mug": {
+
+				},
+				"Furniture": {
+
+				},
+				"Axe": {
+
+				},
+				"Wine Barrel": {
+
+				},
+				"Compass": {
+
+				},
+				"Bottle": {
+
+				},
+				"Knife": {
+
+				},
+				"Saw": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": 250,
+					"y": -259.807617
+				}
+			}
+		},
+		"Town Hall": {
+			"Connections": {
+				"Prison": {
+
+				}
+			},
+			"Items": {
+				"Chest": {
+					"Coins": {
+
+					}
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": 383.022217,
+					"y": -192.836288
+				}
+			}
+		},
+		"Prison": {
+			"Characters": {
+				"Prison Principal": {
+					"Items": {
+						"Prison Keys": {
+
+						}
+					}
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": 469.846313,
+					"y": -102.606049
+				}
+			}
+		},
+		"Field": {
+			"Connections": {
+				"Peasant's Hut": {
+
+				}
+			},
+			"Atributes": {
+				"Position": {
+					"x": 500,
+					"y": -0
+				}
+			}
+		}
+	}
+}
