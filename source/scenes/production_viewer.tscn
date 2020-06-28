@@ -27,8 +27,8 @@ __meta__ = {
 }
 
 [node name="GraphEditLeft" type="GraphEdit" parent="HBox"]
-margin_right = 510.0
-margin_bottom = 600.0
+margin_right = 798.0
+margin_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -82,9 +82,9 @@ margin_right = 201.54
 margin_bottom = 87.7612
 
 [node name="GraphEditRight" type="GraphEdit" parent="HBox"]
-margin_left = 514.0
-margin_right = 1024.0
-margin_bottom = 600.0
+margin_left = 802.0
+margin_right = 1600.0
+margin_bottom = 900.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
