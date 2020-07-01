@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Warstwa_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="96.354px"
+	 height="411.118px" viewBox="0 0 96.354 411.118" enable-background="new 0 0 96.354 411.118" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  height="411.117" width="96.353" y="-264.707" x="61.836" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g id="layer10" inkscape:groupmode="layer" sodipodi:insensitive="true" inkscape:label="right_leg">
+	
+		<g id="g3230" transform="rotate(5.0664895,161.07048,404.2097)" inkscape:transform-center-x="1.133646" inkscape:transform-center-y="66.343279">
+		<g id="g3222" inkscape:transform-center-x="-5.0665003" inkscape:transform-center-y="65.06453">
+			
+				<path id="path3150-8" sodipodi:nodetypes="ccccc" inkscape:transform-center-x="-6.4664385" inkscape:transform-center-y="54.330535" fill="#502D17" d="
+				M87.954,368.868l-28.479,3.825l-91.967-329.4c-6.658-29.999,75.77-46.363,80.875-14.88L87.954,368.868z"/>
+			<path id="path855-9-6" sodipodi:nodetypes="cccccccc" fill="#28150D" d="M36.612,316.726l18.982,51.664l-15.602,32.966
+				c-3.486,12.307-0.469,18.336,10.631,19.581c19.018-3.67,23.357-6.922,31.102-12.769c8.164-10.863,13.568-22.073,11.872-31.262
+				l-7.429-69.03C77.148,312.762,53.966,319.558,36.612,316.726L36.612,316.726z"/>
+			<path id="path1685-96-6" sodipodi:nodetypes="ccccc" fill="#251D1D" d="M8.327,187.951c5.659,8.412,34.684,1.892,47.825-7.977
+				l0.173,4.087c-8.654,12.65-33.054,16.458-45.765,9.354L8.327,187.951z"/>
+		</g>
+		<path id="path1614-3-2" sodipodi:nodetypes="ccccc" fill="#010202" stroke="#010202" stroke-width="0.2646" d="M54.013,362.652
+			c10.493,2.105,23.117,0.456,36.8-7.188l-0.614-7.538c-18.1,8.595-33.227,8.644-39.665,5.74L54.013,362.652z"/>
+		<path id="path1614-5-3-9" sodipodi:nodetypes="ccccc" fill="#010202" stroke="#010202" stroke-width="0.2646" d="M47.774,346.378
+			c10.491,2.105,27.67-0.267,41.354-7.911l-0.961-8.358c-18.1,8.593-37.434,10.186-43.872,7.284L47.774,346.378z"/>
+	</g>
+</g>
+</svg>
