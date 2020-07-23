@@ -551,7 +551,7 @@ tracks/0/keys = {
 [node name="Node2D" type="Node2D"]
 
 [node name="character" type="Node2D" parent="."]
-position = Vector2( 92.5298, 175.237 )
+position = Vector2( -0.0308738, -70.0342 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]

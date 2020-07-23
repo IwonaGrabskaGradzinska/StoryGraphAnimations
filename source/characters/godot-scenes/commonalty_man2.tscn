@@ -551,39 +551,41 @@ tracks/0/keys = {
 [node name="Node2D" type="Node2D"]
 
 [node name="character" type="Node2D" parent="."]
-position = Vector2( 92.5298, 175.237 )
+position = Vector2( 5.72311, -71.2865 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]
-position = Vector2( 3.30713, -11.454 )
+position = Vector2( 4.95013, -19.3554 )
+rotation = -0.0100156
 texture = ExtResource( 6 )
 
 [node name="glowa" type="Sprite" parent="character"]
-position = Vector2( 18.9562, -348.33 )
+position = Vector2( 8.90518, -352.127 )
+rotation = -0.100309
 texture = ExtResource( 3 )
 
 [node name="noga1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -75.1595, 451.015 )
-rotation = 0.0131384
+position = Vector2( -53.6375, 463.059 )
+rotation = 0.0169732
 texture = ExtResource( 2 )
 
 [node name="noga2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 59.3952, 444.077 )
-rotation = 0.0266981
+position = Vector2( 81.1825, 421.523 )
+rotation = -0.106671
 texture = ExtResource( 1 )
 
 [node name="reka1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -156.923, -3.1167 )
-rotation = -0.125154
+position = Vector2( -158.197, -2.84253 )
+rotation = -0.130659
 texture = ExtResource( 4 )
 
 [node name="reka2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 149.385, -15.8276 )
-rotation = 0.00763646
+position = Vector2( 160.275, -8.71878 )
+rotation = 0.0198457
 texture = ExtResource( 5 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
