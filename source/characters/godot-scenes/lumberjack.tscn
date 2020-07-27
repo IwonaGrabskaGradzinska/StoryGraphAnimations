@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://characters/lumberjack/noga2.svg" type="Texture" id=1]
 [ext_resource path="res://characters/lumberjack/reka2.svg" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://characters/lumberjack/noga1.svg" type="Texture" id=4]
 [ext_resource path="res://characters/lumberjack/korpus.svg" type="Texture" id=5]
 [ext_resource path="res://characters/lumberjack/glowa.svg" type="Texture" id=6]
+[ext_resource path="res://sceny/Character.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "drop"
@@ -528,42 +529,11 @@ tracks/11/keys = {
 "values": [ Vector2( 156.09, -35.5809 ), Vector2( 164.099, -39.3243 ), Vector2( 193.414, -41.0048 ), Vector2( 144.638, -33.3478 ), Vector2( 131.88, -28.3008 ), Vector2( 130.941, -31.5677 ) ]
 }
 
-[sub_resource type="Animation" id=5]
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("character:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 10 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 301.218, 175.237 ), Vector2( 62.8893, 175.237 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("character/korpus:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 1.5, 2.5, 3, 4, 4.5, 5.5, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 350.942, 175.237 ), Vector2( 336.153, 175.237 ), Vector2( 336.153, 175.237 ), Vector2( 327.006, 175.237 ), Vector2( 327.006, 175.237 ), Vector2( 317.206, 175.237 ), Vector2( 317.206, 175.237 ), Vector2( 306.514, 175.237 ), Vector2( 306.514, 175.237 ) ]
-}
-
-[node name="Node2D" type="Node2D"]
+[node name="lumberjack" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="character" type="Node2D" parent="."]
-position = Vector2( 0.774536, -58.164 )
+position = Vector2( -1.5743, -56.0181 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]
@@ -604,7 +574,3 @@ anims/drop = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/talking = SubResource( 3 )
 anims/walk = SubResource( 4 )
-
-[node name="move" type="AnimationPlayer" parent="."]
-anims/faster = SubResource( 5 )
-anims/move = SubResource( 6 )

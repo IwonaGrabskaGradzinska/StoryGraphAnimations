@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://main_hero/glowa.svg" type="Texture" id=1]
 [ext_resource path="res://main_hero/noga1.svg" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://main_hero/korpus.svg" type="Texture" id=5]
 [ext_resource path="res://main_hero/szata.svg" type="Texture" id=6]
 [ext_resource path="res://main_hero/reka1.svg" type="Texture" id=7]
+[ext_resource path="res://sceny/Character.gd" type="Script" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "drop"
@@ -577,43 +578,11 @@ tracks/13/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=5]
-resource_name = "faster"
-length = 10.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("character:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 10 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 301.218, 175.237 ), Vector2( 62.8893, 175.237 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-length = 6.0
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath("character/korpus:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1, 1.5, 2.5, 3, 4, 4.5, 5.5, 6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 350.942, 175.237 ), Vector2( 336.153, 175.237 ), Vector2( 336.153, 175.237 ), Vector2( 327.006, 175.237 ), Vector2( 327.006, 175.237 ), Vector2( 317.206, 175.237 ), Vector2( 317.206, 175.237 ), Vector2( 306.514, 175.237 ), Vector2( 306.514, 175.237 ) ]
-}
-
-[node name="Node2D" type="Node2D"]
+[node name="main_character" type="Node2D"]
+script = ExtResource( 8 )
 
 [node name="character" type="Node2D" parent="."]
-position = Vector2( 0.688263, -75.0354 )
+position = Vector2( 1.21686, -75.764 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]
@@ -621,14 +590,12 @@ position = Vector2( 3.30713, -11.454 )
 texture = ExtResource( 5 )
 
 [node name="glowa" type="Sprite" parent="character"]
-position = Vector2( 6.93143, -295.873 )
-rotation = -0.077126
+position = Vector2( 5.01062, -293.952 )
 texture = ExtResource( 1 )
 
 [node name="szata" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 26.2481, 200.942 )
-rotation = -0.0338034
+position = Vector2( 20.0422, 212.113 )
 texture = ExtResource( 6 )
 
 [node name="noga1" type="Sprite" parent="character"]
@@ -639,20 +606,19 @@ texture = ExtResource( 2 )
 
 [node name="noga2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 78.6237, 406.599 )
+position = Vector2( 59.3258, 463.223 )
 rotation = -0.107817
 texture = ExtResource( 4 )
 
 [node name="reka1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -203.274, 85.554 )
-rotation = -0.302281
+position = Vector2( -198.759, 85.9116 )
+rotation = -0.324949
 texture = ExtResource( 7 )
 
 [node name="reka2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 195.455, 84.0686 )
-rotation = 0.0421231
+position = Vector2( 193.741, 76.8284 )
 texture = ExtResource( 3 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
@@ -660,7 +626,3 @@ anims/drop = SubResource( 1 )
 anims/idle = SubResource( 2 )
 anims/talking = SubResource( 3 )
 anims/walk = SubResource( 4 )
-
-[node name="move" type="AnimationPlayer" parent="."]
-anims/faster = SubResource( 5 )
-anims/move = SubResource( 6 )
