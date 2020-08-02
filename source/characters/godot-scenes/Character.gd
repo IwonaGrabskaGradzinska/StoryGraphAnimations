@@ -14,3 +14,15 @@ func drop():
 
 func idle():
 	$animation.play("idle")
+	
+func rumble():
+	$animation.play("rumble")
+	
+func walkmoving():
+	$animation.play("walk (moving)")
+	
+func scaredrunk():
+	$animation.play("scare-drunk")
+	
+func stop():
+	$animation.stop()

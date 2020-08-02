@@ -1,12 +1,13 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://characters/bandit2/glowa.svg" type="Texture" id=1]
-[ext_resource path="res://characters/bandit2/noga2.svg" type="Texture" id=2]
-[ext_resource path="res://characters/bandit2/korpus.svg" type="Texture" id=3]
-[ext_resource path="res://characters/bandit2/reka2.svg" type="Texture" id=4]
-[ext_resource path="res://characters/bandit2/noga1.svg" type="Texture" id=5]
-[ext_resource path="res://characters/bandit2/reka1.svg" type="Texture" id=6]
-[ext_resource path="res://sceny/Character.gd" type="Script" id=7]
+[ext_resource path="res://characters/characters/bandit2/glowa.svg" type="Texture" id=1]
+[ext_resource path="res://characters/characters/bandit2/noga2.svg" type="Texture" id=2]
+[ext_resource path="res://characters/characters/bandit2/korpus.svg" type="Texture" id=3]
+[ext_resource path="res://characters/characters/bandit2/reka2.svg" type="Texture" id=4]
+[ext_resource path="res://characters/characters/bandit2/noga1.svg" type="Texture" id=5]
+[ext_resource path="res://characters/characters/bandit2/reka1.svg" type="Texture" id=6]
+[ext_resource path="res://characters/godot-scenes/Character.gd" type="Script" id=7]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "attack"

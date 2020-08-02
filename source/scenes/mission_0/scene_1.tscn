@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://locations/Inn.svg" type="Texture" id=1]
+[ext_resource path="res://characters/godot-scenes/main_character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/godot-scenes/countryman.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/godot-scenes/drunkard.gd" type="Script" id=4]
+[ext_resource path="res://scenes/mission_0/scene_1.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "scene_1"
+length = 8.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("countryman")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.6, 4.1, 4.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "walkmoving"
+}, {
+"args": [  ],
+"method": "rumble"
+}, {
+"args": [  ],
+"method": "walk"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("main_character")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.4, 1.9, 2, 5.1, 7.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "walk"
+}, {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "scaredrunk"
+}, {
+"args": [  ],
+"method": "walk"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main_character:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.4, 1.8, 5.1, 7.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 33.171, 113.445 ), Vector2( 33.171, 113.445 ), Vector2( 96.1959, 122.733 ), Vector2( 96.1959, 122.733 ), Vector2( 33.171, 113.445 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("countryman:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 4, 4.1, 4.9, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, -1 ), Vector2( -1, -1 ), Vector2( 1, -1 ), Vector2( 1, -1 ), Vector2( -1, -1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("countryman:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.6, 3.9, 4, 4.1, 5, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 179.908, 122.707 ), Vector2( 179.908, 122.707 ), Vector2( 193.144, 122.707 ), Vector2( 102, 122.707 ), Vector2( 270.764, 122.707 ), Vector2( 270.764, 122.707 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("main_character:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 5, 5.1, 7.9, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 200, 151.579 )
+script = ExtResource( 5 )
+
+[node name="Inn" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="main_character" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96.1959, 122.733 )
+scale = Vector2( -1, 1 )
+
+[node name="countryman" parent="." instance=ExtResource( 3 )]
+position = Vector2( 179.908, 122.707 )
+rotation = -3.14159
+scale = Vector2( -1, -1 )
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/scene_1 = SubResource( 1 )

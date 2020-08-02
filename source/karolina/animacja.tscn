@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://characters/godot-scenes/main_character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/godot-scenes/miss.tscn" type="PackedScene" id=4]
+[ext_resource path="res://karolina/animacja.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "rozmowa"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("main")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 2, 2.4, 5, 7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "drop"
+}, {
+"args": [  ],
+"method": "idle"
+}, {
+"args": [  ],
+"method": "talking"
+}, {
+"args": [  ],
+"method": "drop"
+}, {
+"args": [  ],
+"method": "walk"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("miss")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1.4, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "talking"
+}, {
+"args": [  ],
+"method": "idle"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("main:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 7, 10 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 348.609, 240.279 ), Vector2( 348.609, 240.279 ), Vector2( -39.7822, 61.9453 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="tło" type="Sprite" parent="."]
+position = Vector2( 265.264, 357.528 )
+scale = Vector2( 40.7585, 22.9657 )
+texture = ExtResource( 2 )
+
+[node name="main" parent="." instance=ExtResource( 3 )]
+position = Vector2( 348.609, 240.279 )
+
+[node name="miss" parent="." instance=ExtResource( 4 )]
+position = Vector2( 231.44, 234.209 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/rozmowa = SubResource( 1 )

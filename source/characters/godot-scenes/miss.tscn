@@ -1,12 +1,13 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://characters/miss/glowa.svg" type="Texture" id=1]
-[ext_resource path="res://characters/miss/noga1.svg" type="Texture" id=2]
-[ext_resource path="res://characters/miss/reka1.svg" type="Texture" id=3]
-[ext_resource path="res://characters/miss/noga2.svg" type="Texture" id=4]
-[ext_resource path="res://characters/miss/korpus.svg" type="Texture" id=5]
-[ext_resource path="res://characters/miss/reka2.svg" type="Texture" id=6]
-[ext_resource path="res://sceny/Character.gd" type="Script" id=7]
+[ext_resource path="res://characters/characters/miss/glowa.svg" type="Texture" id=1]
+[ext_resource path="res://characters/characters/miss/noga1.svg" type="Texture" id=2]
+[ext_resource path="res://characters/characters/miss/reka1.svg" type="Texture" id=3]
+[ext_resource path="res://characters/characters/miss/noga2.svg" type="Texture" id=4]
+[ext_resource path="res://characters/characters/miss/korpus.svg" type="Texture" id=5]
+[ext_resource path="res://characters/characters/miss/reka2.svg" type="Texture" id=6]
+[ext_resource path="res://characters/godot-scenes/Character.gd" type="Script" id=7]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "drop"
