@@ -1,12 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://characters/innkeeper/noga1.svg" type="Texture" id=1]
-[ext_resource path="res://characters/innkeeper/reka1.svg" type="Texture" id=2]
-[ext_resource path="res://characters/innkeeper/reka2.svg" type="Texture" id=3]
-[ext_resource path="res://characters/innkeeper/noga2.svg" type="Texture" id=4]
-[ext_resource path="res://characters/innkeeper/korpus.svg" type="Texture" id=5]
-[ext_resource path="res://characters/innkeeper/glowa.svg" type="Texture" id=6]
-[ext_resource path="res://sceny/Character.gd" type="Script" id=7]
+[ext_resource path="res://characters/characters/innkeeper/noga1.svg" type="Texture" id=1]
+[ext_resource path="res://characters/characters/innkeeper/reka1.svg" type="Texture" id=2]
+[ext_resource path="res://characters/characters/innkeeper/reka2.svg" type="Texture" id=3]
+[ext_resource path="res://characters/characters/innkeeper/noga2.svg" type="Texture" id=4]
+[ext_resource path="res://characters/characters/innkeeper/korpus.svg" type="Texture" id=5]
+[ext_resource path="res://characters/characters/innkeeper/glowa.svg" type="Texture" id=6]
+[ext_resource path="res://characters/godot-scenes/Character.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "drop"
@@ -121,7 +121,46 @@ tracks/8/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "idle"
+resource_name = "give-elixir"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("character/reka1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -155.337, -111.545 ), Vector2( -88.4192, -290.411 ), Vector2( -88.4192, -290.411 ), Vector2( -155.337, -111.545 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("character/reka1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -14.6249, -14.6249, 33.5175, -14.6249 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("character/reka1:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -109.912, 156.175 ), Vector2( -109.912, 156.175 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("character/korpus:position")
@@ -268,8 +307,46 @@ tracks/11/keys = {
 "values": [ 12.8276 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "talking"
+[sub_resource type="Animation" id=4]
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("character/glowa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -26.5485, -449.815 ), Vector2( -27.8313, -350.905 ), Vector2( -27.8313, -350.905 ), Vector2( -26.5485, -449.815 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("character/glowa:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 1, 1.5, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -2.18955, -2.18955, -34.7547, 0.0, -34.7547, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("character/glowa:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.9, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 5.06074, -98.7888 ), Vector2( 5.06074, -98.7888 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
 length = 2.5
 loop = true
 tracks/0/type = "value"
@@ -369,7 +446,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -525,13 +602,15 @@ position = Vector2( 4.33319, -72.7598 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]
-position = Vector2( 15.1163, -42.1896 )
+position = Vector2( -14.5757, -36.1707 )
+rotation = -0.0595138
 texture = ExtResource( 5 )
 
 [node name="glowa" type="Sprite" parent="character"]
-position = Vector2( 10.0704, -448.765 )
-rotation = -0.0400711
+position = Vector2( -27.8313, -350.905 )
+rotation = -0.0382149
 texture = ExtResource( 6 )
+offset = Vector2( 5.06074, -98.7888 )
 
 [node name="noga1" type="Sprite" parent="character"]
 show_behind_parent = true
@@ -541,24 +620,26 @@ texture = ExtResource( 1 )
 
 [node name="noga2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 62.812, 449.268 )
+position = Vector2( 47.1503, 444.84 )
 rotation = 0.0266981
 texture = ExtResource( 4 )
 
 [node name="reka1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -127.085, -112.915 )
-rotation = -0.216689
+position = Vector2( -155.337, -111.545 )
+rotation = -0.255254
 texture = ExtResource( 2 )
 
 [node name="reka2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 174.847, -115.699 )
-rotation = -0.0652235
+position = Vector2( 96.9462, -127.463 )
+rotation = 0.00648236
 texture = ExtResource( 3 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 anims/drop = SubResource( 1 )
-anims/idle = SubResource( 2 )
-anims/talking = SubResource( 3 )
-anims/walk = SubResource( 4 )
+anims/give-elixir = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/nod = SubResource( 4 )
+anims/talking = SubResource( 5 )
+anims/walk = SubResource( 6 )
