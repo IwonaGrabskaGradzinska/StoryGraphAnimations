@@ -1,0 +1,1038 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://locations/Port.svg" type="Texture" id=1]
+[ext_resource path="res://image/Items32/baranina1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/PossibleItem.gd" type="Script" id=3]
+[ext_resource path="res://scenes/Character.gd" type="Script" id=4]
+[ext_resource path="res://scenes/game_controller.gd" type="Script" id=5]
+[ext_resource path="res://characters/bartender_active_center.svg" type="Texture" id=6]
+[ext_resource path="res://image/black_circle.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=13]
+resource_name = "change_scene"
+length = 5.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("BlackCircle/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "expand", "shrink" ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ NodePath("Location2") ],
+"method": "change_scene"
+} ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "give_item_and_drop_all_items"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MainCharacter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.8, 2.7, 10.5, 14 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1"), NodePath("Location/Characters/Bartender") ],
+"method": "give_item"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [  ],
+"method": "close_inventory"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Location/Characters/Bartender")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 2.7, 7.3, 8, 8.3, 9.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina4") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_left_hand"
+}, {
+"args": [  ],
+"method": "hide_items"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [  ],
+"method": "close_inventory"
+}, {
+"args": [  ],
+"method": "dropAllItems"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Location/Characters/Bartender/LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.4, 5.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.671, -51.2905 ), Vector2( 15.671, -51.2905 ), Vector2( 40.2191, -79.4311 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "meat_fight_started_and_cancelled"
+length = 10.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("MainCharacter/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 1.1, 4.1 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Location2/Characters/Bartender/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 2.2, 5.2 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("MainCharacter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "equip_primary_weapon"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Location2/Characters/Bartender")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.101 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "test"
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=7]
+resource_name = "fight_end"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_items"
+} ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "fight_start"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "equip_hands"
+} ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "change_scene"
+length = 5.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("BlackCircle/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "expand", "shrink" ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ NodePath("Location2") ],
+"method": "change_scene"
+} ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "give_item_and_drop_all_items"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MainCharacter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.8, 2.7, 10.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1"), NodePath("Location/Characters/Bartender") ],
+"method": "give_item"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Location/Characters/Bartender")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 2.7, 7.3, 8, 8.3, 9.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina4") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_left_hand"
+}, {
+"args": [  ],
+"method": "hide_items"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [  ],
+"method": "close_inventory"
+}, {
+"args": [  ],
+"method": "dropAllItems"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Location/Characters/Bartender/LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.4, 5.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.671, -51.2905 ), Vector2( 15.671, -51.2905 ), Vector2( 40.2191, -79.4311 ) ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "meat_fight_started_and_cancelled"
+length = 10.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("MainCharacter/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 1.1, 4.1 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Location/Characters/Bartender/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 2.2, 5.2 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("MainCharacter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "equip_primary_weapon"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Location/Characters/Bartender")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.101 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "fight_end"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_items"
+} ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "fight_start"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "equip_hands"
+} ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "change_scene"
+length = 5.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("BlackCircle/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "expand", "shrink" ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ NodePath("Location2") ],
+"method": "change_scene"
+} ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "give_item_and_drop_all_items"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MainCharacter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.8, 2.7, 10.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1"), NodePath("Location/Characters/Bartender") ],
+"method": "give_item"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Location/Characters/Bartender")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 2.7, 7.3, 8, 8.3, 9.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina4") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_left_hand"
+}, {
+"args": [  ],
+"method": "hide_items"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [  ],
+"method": "close_inventory"
+}, {
+"args": [  ],
+"method": "dropAllItems"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Location/Characters/Bartender/LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.4, 5.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.671, -51.2905 ), Vector2( 15.671, -51.2905 ), Vector2( 40.2191, -79.4311 ) ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "meat_fight_started_and_cancelled"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("../MainCharacter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.7, 1, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("../PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("../PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("../PossibleItems/Baranina1") ],
+"method": "equip_primary_weapon"
+}, {
+"args": [ NodePath("../PossibleItems/Baranina2") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Characters/Bartender")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ NodePath("../PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("../PossibleItems/Baranina3") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Characters/Bartender/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 2.2, 4.9 )
+}
+tracks/3/type = "animation"
+tracks/3/path = NodePath("../MainCharacter/AnimationPlayer")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 3.5, 6.3 )
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "fight_end"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "hide_items"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "fight_start"
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "equip_hands"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "expand"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ), Vector2( 1.3, 1.3 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "shrink"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.3, 1.3 ), Vector2( 1e-05, 1e-05 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "change_scene"
+length = 5.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("BlackCircle/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "expand", "shrink" ),
+"times": PoolRealArray( 0, 3 )
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ NodePath("Location2") ],
+"method": "change_scene"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "give_item_and_drop_all_items"
+length = 15.0
+tracks/0/type = "method"
+tracks/0/path = NodePath("MainCharacter")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7, 1.8, 2.7, 10.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1"), NodePath("Location/Characters/Bartender") ],
+"method": "give_item"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+} ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("Location/Characters/Bartender")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 2.7, 7.3, 8, 8.3, 9.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina4") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("Location") ],
+"method": "set_location"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_left_hand"
+}, {
+"args": [  ],
+"method": "hide_items"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "set_to_right_hand"
+}, {
+"args": [  ],
+"method": "close_inventory"
+}, {
+"args": [  ],
+"method": "dropAllItems"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Location/Characters/Bartender/LeftHand:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.4, 5.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 15.671, -51.2905 ), Vector2( 15.671, -51.2905 ), Vector2( 40.2191, -79.4311 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "meat_fight_started_and_cancelled"
+length = 10.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("MainCharacter/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 1.1, 4.1 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("Location/Characters/Bartender/AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "fight_start", "fight_end" ),
+"times": PoolRealArray( 2.2, 5.2 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("MainCharacter")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.001, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina1") ],
+"method": "equip_primary_weapon"
+}, {
+"args": [ NodePath("PossibleItems/Baranina2") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("Location/Characters/Bartender")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.101 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "add_item_from_path"
+}, {
+"args": [ NodePath("PossibleItems/Baranina3") ],
+"method": "equip_secondary_weapon"
+} ]
+}
+
+[sub_resource type="Animation" id=23]
+resource_name = "test"
+length = 32.0
+tracks/0/type = "animation"
+tracks/0/path = NodePath("Location/AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"clips": PoolStringArray( "give_item_and_drop_all_items" ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "animation"
+tracks/1/path = NodePath("SceneChangeAnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": PoolStringArray( "give_item_and_drop_all_items", "change_scene", "meat_fight_started_and_cancelled 2" ),
+"times": PoolRealArray( 0, 15.3, 20.6 )
+}
+tracks/2/type = "animation"
+tracks/2/path = NodePath("Location2/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = false
+tracks/2/keys = {
+"clips": PoolStringArray( "meat_fight_started_and_cancelled" ),
+"times": PoolRealArray( 20.4 )
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+location = NodePath("Location")
+
+[node name="SceneChangeAnimationPlayer" type="AnimationPlayer" parent="."]
+anims/change_scene = SubResource( 13 )
+anims/give_item_and_drop_all_items = SubResource( 14 )
+anims/meat_fight_started_and_cancelled = SubResource( 15 )
+"anims/meat_fight_started_and_cancelled 2" = SubResource( 15 )
+anims/test = SubResource( 16 )
+
+[node name="PossibleItems" type="Node2D" parent="."]
+position = Vector2( -262.714, -19.2392 )
+
+[node name="Baranina1" type="Sprite" parent="PossibleItems"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Baranina2" type="Sprite" parent="PossibleItems"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Baranina3" type="Sprite" parent="PossibleItems"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Baranina4" type="Sprite" parent="PossibleItems"]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Location" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite" parent="Location"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Characters" type="Node2D" parent="Location"]
+position = Vector2( -369.733, 274.092 )
+
+[node name="Bartender" type="Node2D" parent="Location/Characters"]
+position = Vector2( 613.587, 0 )
+script = ExtResource( 4 )
+mainCharacter = false
+flipped = true
+right_hand = NodePath("../Bartender/RightHand")
+left_hand = NodePath("../Bartender/LeftHand")
+armor_handle = NodePath("Armor")
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Location/Characters/Bartender"]
+position = Vector2( 1.19751, -56.8801 )
+scale = Vector2( 0.11, 0.11 )
+frames = SubResource( 1 )
+animation = "New Anim"
+
+[node name="RightHand" type="Node2D" parent="Location/Characters/Bartender"]
+position = Vector2( -27.9795, -54.3493 )
+
+[node name="LeftHand" type="Node2D" parent="Location/Characters/Bartender"]
+position = Vector2( 15.671, -51.2905 )
+
+[node name="Armor" type="Node2D" parent="Location/Characters/Bartender"]
+position = Vector2( -8.98108, -95.1992 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Location/Characters/Bartender"]
+anims/fight_end = SubResource( 7 )
+anims/fight_start = SubResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Location"]
+anims/change_scene = SubResource( 17 )
+anims/give_item_and_drop_all_items = SubResource( 18 )
+anims/meat_fight_started_and_cancelled = SubResource( 19 )
+
+[node name="Location2" type="Node2D" parent="."]
+visible = false
+
+[node name="Background" type="Sprite" parent="Location2"]
+texture = ExtResource( 1 )
+centered = false
+flip_h = true
+
+[node name="Characters" type="Node2D" parent="Location2"]
+position = Vector2( -369.733, 274.092 )
+
+[node name="Bartender" type="Node2D" parent="Location2/Characters"]
+position = Vector2( 613.587, 0 )
+script = ExtResource( 4 )
+mainCharacter = false
+flipped = true
+right_hand = NodePath("../Bartender/RightHand")
+left_hand = NodePath("../Bartender/LeftHand")
+armor_handle = NodePath("Armor")
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Location2/Characters/Bartender"]
+position = Vector2( 1.19751, -56.8801 )
+scale = Vector2( 0.11, 0.11 )
+frames = SubResource( 1 )
+animation = "New Anim"
+
+[node name="RightHand" type="Node2D" parent="Location2/Characters/Bartender"]
+position = Vector2( -27.9795, -54.3493 )
+
+[node name="LeftHand" type="Node2D" parent="Location2/Characters/Bartender"]
+position = Vector2( 15.671, -51.2905 )
+
+[node name="Armor" type="Node2D" parent="Location2/Characters/Bartender"]
+position = Vector2( -8.98108, -95.1992 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Location2/Characters/Bartender"]
+anims/fight_end = SubResource( 11 )
+anims/fight_start = SubResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Location2"]
+anims/change_scene = SubResource( 20 )
+anims/give_item_and_drop_all_items = SubResource( 21 )
+anims/meat_fight_started_and_cancelled = SubResource( 22 )
+
+[node name="MainCharacter" type="Node2D" parent="."]
+position = Vector2( 131.452, 274.092 )
+script = ExtResource( 4 )
+right_hand = NodePath("../MainCharacter/RightHand")
+left_hand = NodePath("../MainCharacter/LeftHand")
+armor_handle = NodePath("Armor")
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="MainCharacter"]
+position = Vector2( -1.79626, -57.4785 )
+scale = Vector2( 0.11, 0.11 )
+frames = SubResource( 1 )
+animation = "New Anim"
+flip_h = true
+
+[node name="RightHand" type="Node2D" parent="MainCharacter"]
+position = Vector2( -17.3634, -49.695 )
+
+[node name="LeftHand" type="Node2D" parent="MainCharacter"]
+position = Vector2( 29.338, -53.8861 )
+
+[node name="Armor" type="Node2D" parent="MainCharacter"]
+position = Vector2( -13.1722, -96.3966 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MainCharacter"]
+anims/fight_end = SubResource( 6 )
+anims/fight_start = SubResource( 5 )
+
+[node name="BlackCircle" type="Sprite" parent="."]
+position = Vector2( 200, 150 )
+scale = Vector2( 1e-05, 1e-05 )
+texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlackCircle"]
+anims/expand = SubResource( 3 )
+anims/shrink = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "test"
+anims/change_scene = SubResource( 10 )
+anims/give_item_and_drop_all_items = SubResource( 2 )
+anims/meat_fight_started_and_cancelled = SubResource( 9 )
+anims/test = SubResource( 23 )
