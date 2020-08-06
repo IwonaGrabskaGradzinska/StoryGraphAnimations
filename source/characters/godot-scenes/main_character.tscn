@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://characters/characters/main_hero/glowa.svg" type="Texture" id=1]
 [ext_resource path="res://characters/characters/main_hero/noga1.svg" type="Texture" id=2]
@@ -134,7 +134,46 @@ tracks/9/keys = {
 }
 
 [sub_resource type="Animation" id=2]
-resource_name = "idle"
+resource_name = "get-elixir"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("character/reka1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -198.759, 85.9116 ), Vector2( -104.603, -65.1492 ), Vector2( -104.603, -65.1492 ), Vector2( -198.759, 85.9116 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("character/reka1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.8, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -18.6182, 57.7516, -18.6182 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("character/reka1:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -137.456, 113.095 ), Vector2( -137.456, 113.095 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("character/korpus:position")
@@ -305,8 +344,7 @@ tracks/13/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "scare-drunk"
+[sub_resource type="Animation" id=4]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("character/reka1:position")
@@ -357,7 +395,7 @@ tracks/3/keys = {
 "values": [ 0.0, -17.4, 0.0, -17.4, 0.0, -17.4, 0.0, -17.4, 0.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 length = 2.5
 loop = true
 tracks/0/type = "value"
@@ -457,7 +495,7 @@ tracks/7/keys = {
 "values": [ -1.7252, -4.07895, -0.0828133, 3.39422, -5.87813 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -673,7 +711,8 @@ texture = ExtResource( 3 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
 anims/drop = SubResource( 1 )
-anims/idle = SubResource( 2 )
-anims/scare-drunk = SubResource( 3 )
-anims/talking = SubResource( 4 )
-anims/walk = SubResource( 5 )
+anims/get-elixir = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/scare-drunk = SubResource( 4 )
+anims/talking = SubResource( 5 )
+anims/walk = SubResource( 6 )

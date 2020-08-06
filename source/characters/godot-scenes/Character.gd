@@ -24,5 +24,7 @@ func walkmoving():
 func scaredrunk():
 	$animation.play("scare-drunk")
 	
+func get_elixir():
+	$animation.play("get-elixir")
 func stop():
 	$animation.stop()
