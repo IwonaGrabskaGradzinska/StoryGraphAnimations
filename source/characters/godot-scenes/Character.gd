@@ -26,5 +26,15 @@ func scaredrunk():
 	
 func get_elixir():
 	$animation.play("get-elixir")
+	
+func give_money():
+	$animation.play("give-money")	
+	
+func nod():
+	$animation.play("nod")
+	
+func reach():
+	$animation.play("reach")
+	
 func stop():
 	$animation.stop()
