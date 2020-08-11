@@ -35,6 +35,15 @@ func nod():
 	
 func reach():
 	$animation.play("reach")
+		
+func fight():
+	$animation.play("fight")
+	
+func death():
+	$animation.play("death")
+	
+func cast_spell():
+	$animation.play("cast-spell")
 	
 func stop():
 	$animation.stop()

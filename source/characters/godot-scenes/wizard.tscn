@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://characters/characters/wizzard/korpus.svg" type="Texture" id=1]
 [ext_resource path="res://characters/characters/wizzard/glowa.svg" type="Texture" id=2]
@@ -8,8 +8,112 @@
 [ext_resource path="res://characters/characters/wizzard/reka1.svg" type="Texture" id=6]
 [ext_resource path="res://characters/godot-scenes/Character.gd" type="Script" id=7]
 
+[sub_resource type="Animation" id=7]
+resource_name = "cast-spell"
+length = 1.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("character/reka1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -103.136, -158.5 ), Vector2( -6.0193, -326.318 ), Vector2( -6.0193, -326.318 ), Vector2( -103.136, -158.5 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("character/reka1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -39.0329, -39.0329, 85.4447, -39.0329, -39.0329, -39.0329 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("character/reka2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 165.581, -170.813 ), Vector2( 112.815, -335.121 ), Vector2( 112.815, -335.121 ), Vector2( 165.581, -170.813 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("character/reka2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.1, 0.5, 0.9, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 11.2264, 11.2264, 133.07, 11.2264, 11.2264, 11.2264 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("character/reka1:offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -181.125, 69.1978 ), Vector2( -181.125, 69.1978 ), Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("character/reka2:offset")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.1, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 83.7446, 150.891 ), Vector2( 83.7446, 150.891 ), Vector2( 0, 0 ) ]
+}
+
 [sub_resource type="Animation" id=1]
-resource_name = "drop"
+resource_name = "death"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.612915, -58.5853 ), Vector2( 34.5973, -76.1904 ), Vector2( 75.5292, -17.6534 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("character:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 33.4505, 86.1717 ]
+}
+
+[sub_resource type="Animation" id=2]
 length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("character/reka1:position")
@@ -132,8 +236,7 @@ tracks/9/keys = {
 "values": [ 2.76224, -5.98139, -6.15312, 2.76224 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "idle"
+[sub_resource type="Animation" id=3]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("character/korpus:position")
@@ -280,7 +383,7 @@ tracks/11/keys = {
 "values": [ 6.36903 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=4]
 resource_name = "reach"
 length = 2.0
 tracks/0/type = "value"
@@ -320,7 +423,7 @@ tracks/2/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -164.984, 60.5961 ), Vector2( -164.984, 60.5961 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 length = 2.5
 loop = true
 tracks/0/type = "value"
@@ -420,7 +523,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 length = 0.5
 loop = true
 tracks/0/type = "value"
@@ -576,41 +679,42 @@ position = Vector2( -0.612915, -58.5853 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]
-position = Vector2( 15.6827, -17.2141 )
+position = Vector2( 39.4663, -24.8893 )
 scale = Vector2( 1.01023, 1 )
 texture = ExtResource( 1 )
 
 [node name="glowa" type="Sprite" parent="character"]
-position = Vector2( 38.7612, -526.58 )
+position = Vector2( 66.2383, -514.792 )
 texture = ExtResource( 2 )
 
 [node name="noga1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -45.0271, 303.76 )
-rotation = 0.0131384
+position = Vector2( -17.6965, 311.906 )
 texture = ExtResource( 3 )
 
 [node name="noga2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 72.443, 307.777 )
+position = Vector2( 88.6052, 312.256 )
 rotation = 0.0266981
 texture = ExtResource( 4 )
 
 [node name="reka1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -108.946, -156.472 )
-rotation = -0.772003
+position = Vector2( -103.136, -158.5 )
+rotation = -0.681253
 texture = ExtResource( 6 )
 
 [node name="reka2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 151.349, -168.337 )
-rotation = 0.111161
+position = Vector2( 165.581, -170.813 )
+rotation = 0.195938
 texture = ExtResource( 5 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
-anims/drop = SubResource( 1 )
-anims/idle = SubResource( 2 )
-anims/reach = SubResource( 6 )
-anims/talking = SubResource( 7 )
-anims/walk = SubResource( 5 )
+anims/cast-spell = SubResource( 7 )
+anims/death = SubResource( 1 )
+anims/drop = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/reach = SubResource( 4 )
+anims/talking = SubResource( 5 )
+anims/walk = SubResource( 6 )
