@@ -8,7 +8,7 @@
 [ext_resource path="res://stare/image/Items/trucizna 02/Trucizna-zakorkowana.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
-resource_name = "scene_2"
+resource_name = "scene"
 length = 8.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("main_character:position")
@@ -159,4 +159,4 @@ scale = Vector2( 0.03, 0.03 )
 texture = ExtResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/scene_2 = SubResource( 1 )
+anims/scene = SubResource( 1 )

@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/mission_0/getting_elixir.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
-resource_name = "getting_elixir"
+resource_name = "scene"
 length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("main_character:position")
@@ -92,4 +92,4 @@ position = Vector2( 50.9908, 171.327 )
 texture = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/getting_elixir = SubResource( 1 )
+anims/scene = SubResource( 1 )
