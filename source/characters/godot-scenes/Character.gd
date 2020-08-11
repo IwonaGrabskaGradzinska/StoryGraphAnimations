@@ -45,5 +45,8 @@ func death():
 func cast_spell():
 	$animation.play("cast-spell")
 	
+func pickup_elixir():
+	$animation.play("pick-up-item")
+
 func stop():
 	$animation.stop()

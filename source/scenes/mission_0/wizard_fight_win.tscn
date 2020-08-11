@@ -137,6 +137,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("fioletowyEliksir:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 44.0414, 171.327 ), Vector2( 36.0803, 225.064 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("fioletowyEliksir:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 5.5, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -110.024 ]
+}
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -148,12 +172,12 @@ texture = ExtResource( 2 )
 [node name="main_character" parent="." instance=ExtResource( 1 )]
 position = Vector2( 437.964, 262.713 )
 
-[node name="wizard" parent="." instance=ExtResource( 5 )]
-position = Vector2( 83.7635, 262.083 )
-
 [node name="fioletowyEliksir" type="Sprite" parent="."]
 position = Vector2( 44.0414, 171.327 )
 texture = ExtResource( 3 )
+
+[node name="wizard" parent="." instance=ExtResource( 5 )]
+position = Vector2( 83.7635, 262.083 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/scene = SubResource( 1 )
