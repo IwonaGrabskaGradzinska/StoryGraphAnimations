@@ -10,7 +10,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "scene"
-length = 8.0
+length = 5.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("main_character:position")
 tracks/0/interp = 1
