@@ -48,5 +48,8 @@ func cast_spell():
 func pickup_elixir():
 	$animation.play("pick-up-item")
 
+func drink_elixir():
+	$animation.play("drink-elixir")
+	
 func stop():
 	$animation.stop()
