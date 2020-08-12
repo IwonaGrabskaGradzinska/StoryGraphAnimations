@@ -10,3 +10,6 @@ func death():
 	
 func fight():
 	$animation.play("fight")
+	
+func stop():
+	$animation.stop()
