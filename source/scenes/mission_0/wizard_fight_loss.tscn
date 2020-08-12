@@ -146,10 +146,11 @@ position = Vector2( 200, 150 )
 texture = ExtResource( 2 )
 
 [node name="main_character" parent="." instance=ExtResource( 1 )]
-position = Vector2( 437.964, 262.713 )
+position = Vector2( 136.736, 262.713 )
 
 [node name="wizard" parent="." instance=ExtResource( 5 )]
 position = Vector2( 83.7635, 262.083 )
+scale = Vector2( -1, 1 )
 
 [node name="fioletowyEliksir" type="Sprite" parent="."]
 position = Vector2( 44.0414, 171.327 )
@@ -159,7 +160,6 @@ texture = ExtResource( 3 )
 anims/scene = SubResource( 1 )
 
 [node name="mieczdrwala" type="Sprite" parent="."]
-visible = false
 position = Vector2( 105.024, 205.939 )
 scale = Vector2( -1, 1 )
 texture = ExtResource( 6 )

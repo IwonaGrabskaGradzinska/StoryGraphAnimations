@@ -1232,7 +1232,7 @@ texture = ExtResource( 2 )
 [node name="noga2" type="Sprite" parent="character"]
 show_behind_parent = true
 position = Vector2( 59.3258, 463.223 )
-rotation = 0.0101027
+rotation = 0.0266981
 texture = ExtResource( 4 )
 
 [node name="reka1" type="Sprite" parent="character"]

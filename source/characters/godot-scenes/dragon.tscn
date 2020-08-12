@@ -1,14 +1,95 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://characters/dragon/noga2.svg" type="Texture" id=1]
-[ext_resource path="res://characters/dragon/korpus.svg" type="Texture" id=2]
-[ext_resource path="res://characters/dragon/glowa.svg" type="Texture" id=3]
-[ext_resource path="res://characters/dragon/noga1.svg" type="Texture" id=4]
-[ext_resource path="res://characters/dragon/noga3.svg" type="Texture" id=5]
-[ext_resource path="res://characters/dragon/skrzydlo2.svg" type="Texture" id=6]
-[ext_resource path="res://characters/dragon/noga4.svg" type="Texture" id=7]
-[ext_resource path="res://characters/dragon/skrzydlo1.svg" type="Texture" id=8]
-[ext_resource path="res://characters/dragon/ogon.svg" type="Texture" id=9]
+[ext_resource path="res://characters/characters/dragon/noga2.svg" type="Texture" id=1]
+[ext_resource path="res://characters/characters/dragon/korpus.svg" type="Texture" id=2]
+[ext_resource path="res://characters/characters/dragon/glowa.svg" type="Texture" id=3]
+[ext_resource path="res://characters/characters/dragon/noga1.svg" type="Texture" id=4]
+[ext_resource path="res://characters/characters/dragon/noga3.svg" type="Texture" id=5]
+[ext_resource path="res://characters/characters/dragon/skrzydlo2.svg" type="Texture" id=6]
+[ext_resource path="res://characters/characters/dragon/noga4.svg" type="Texture" id=7]
+[ext_resource path="res://characters/characters/dragon/skrzydlo1.svg" type="Texture" id=8]
+[ext_resource path="res://characters/characters/dragon/ogon.svg" type="Texture" id=9]
+
+[sub_resource type="Animation" id=3]
+resource_name = "death"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/path = NodePath("character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 14.674, -57.8617 ), Vector2( 93.5666, -80.5568 ), Vector2( 163.813, -5.98713 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("character:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 74.8347, 149.669 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "fight"
+length = 0.7
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("character/glowa:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -402.401, -147.805 ), Vector2( -295.256, 94.0468 ), Vector2( -333.081, 77.8359 ), Vector2( -295.256, 94.0468 ), Vector2( -402.401, -147.805 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("character/glowa:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -1.5821, -51.6071, -1.5821 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("character/glowa:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -100.427, -244.718 ), Vector2( -100.427, -244.718 ), Vector2( -100.427, -244.718 ), Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("character:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 14.674, -57.8617 ), Vector2( -5.23399, -51.0361 ), Vector2( 14.674, -57.8617 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 resource_name = "idle"
@@ -462,7 +543,7 @@ texture = ExtResource( 2 )
 [node name="glowa" type="Sprite" parent="character"]
 show_behind_parent = true
 position = Vector2( -402.401, -147.805 )
-rotation = -0.0276128
+rotation = -0.0276129
 texture = ExtResource( 3 )
 
 [node name="ogon" type="Sprite" parent="character"]
@@ -494,7 +575,7 @@ texture = ExtResource( 1 )
 
 [node name="noga3" type="Sprite" parent="character"]
 position = Vector2( 15.4221, 416.535 )
-rotation = 0.0417784
+rotation = 0.0417783
 texture = ExtResource( 5 )
 
 [node name="noga4" type="Sprite" parent="character"]
@@ -504,5 +585,7 @@ rotation = 0.11427
 texture = ExtResource( 7 )
 
 [node name="animation" type="AnimationPlayer" parent="."]
+anims/death = SubResource( 3 )
+anims/fight = SubResource( 4 )
 anims/idle = SubResource( 1 )
 anims/walk = SubResource( 2 )
