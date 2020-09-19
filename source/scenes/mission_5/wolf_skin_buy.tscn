@@ -1,0 +1,140 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://locations/Tavern.svg" type="Texture" id=1]
+[ext_resource path="res://characters/godot-scenes/trader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/godot-scenes/main_character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://image/Items32/skora.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "buy"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("main_character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 7.4, 9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 459.553, 253.984 ), Vector2( 152.391, 253.984 ), Vector2( 152.391, 253.984 ), Vector2( 446.719, 256.957 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("main_character")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.101, 3.1, 3.8, 4.3, 5.4, 7.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "walk"
+}, {
+"args": [  ],
+"method": "idle"
+}, {
+"args": [  ],
+"method": "talking"
+}, {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "give_money"
+}, {
+"args": [  ],
+"method": "pickup_item"
+}, {
+"args": [  ],
+"method": "walk"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("trader")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.2, 3, 3.8, 4.2, 5.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "idle"
+}, {
+"args": [  ],
+"method": "talking"
+}, {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "talking"
+}, {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "drop"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("trader/skora:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5.4, 6.3, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -17.2698, -51.8047 ), Vector2( -17.2698, -51.8047 ), Vector2( -28.5672, -29.8044 ), Vector2( -40.4593, -54.1831 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("trader/skora:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5.4, 7.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("main_character:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 7, 7.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tavern" type="Sprite" parent="."]
+position = Vector2( 200, 150 )
+texture = ExtResource( 1 )
+
+[node name="main_character" parent="." instance=ExtResource( 3 )]
+position = Vector2( 152.391, 253.984 )
+
+[node name="trader" parent="." instance=ExtResource( 2 )]
+position = Vector2( 87.858, 257.12 )
+scale = Vector2( -1, 1 )
+
+[node name="skora" type="Sprite" parent="trader"]
+position = Vector2( -21.0356, -44.4713 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "buy"
+anims/buy = SubResource( 1 )

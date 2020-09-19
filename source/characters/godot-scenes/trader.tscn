@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://characters/trader/noga2.svg" type="Texture" id=1]
-[ext_resource path="res://characters/trader/korpus.svg" type="Texture" id=2]
-[ext_resource path="res://characters/trader/glowa.svg" type="Texture" id=3]
-[ext_resource path="res://characters/trader/reka1.svg" type="Texture" id=4]
-[ext_resource path="res://characters/trader/noga1.svg" type="Texture" id=5]
-[ext_resource path="res://characters/trader/reka2.svg" type="Texture" id=6]
-[ext_resource path="res://sceny/Character.gd" type="Script" id=7]
+[ext_resource path="res://characters/characters/trader/noga2.svg" type="Texture" id=1]
+[ext_resource path="res://characters/characters/trader/korpus.svg" type="Texture" id=2]
+[ext_resource path="res://characters/characters/trader/glowa.svg" type="Texture" id=3]
+[ext_resource path="res://characters/characters/trader/reka1.svg" type="Texture" id=4]
+[ext_resource path="res://characters/characters/trader/noga1.svg" type="Texture" id=5]
+[ext_resource path="res://characters/characters/trader/reka2.svg" type="Texture" id=6]
+[ext_resource path="res://characters/godot-scenes/Character.gd" type="Script" id=7]
 
 [sub_resource type="Animation" id=1]
 resource_name = "drop"
@@ -537,37 +537,36 @@ position = Vector2( 1.03336, -57.3834 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]
-position = Vector2( 39.4663, -140.838 )
+position = Vector2( 44.067, -106.469 )
 scale = Vector2( 1.01023, 1 )
 texture = ExtResource( 2 )
 
 [node name="glowa" type="Sprite" parent="character"]
-position = Vector2( 28.0834, -463.549 )
-rotation = -0.0485218
+position = Vector2( 18.6584, -431.117 )
 texture = ExtResource( 3 )
 
 [node name="noga1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -36.4612, 305.93 )
-rotation = 0.0472657
+position = Vector2( -45.0271, 303.76 )
+rotation = 0.0131384
 texture = ExtResource( 5 )
 
 [node name="noga2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 82.5493, 312.288 )
-rotation = 0.0266981
+position = Vector2( 64.5373, 310.859 )
+rotation = 0.0482102
 texture = ExtResource( 1 )
 
 [node name="reka1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -104.596, -125.968 )
-rotation = -0.0605864
+position = Vector2( -102.755, -133.664 )
+rotation = 0.0065486
 texture = ExtResource( 4 )
 
 [node name="reka2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 167.907, -157.814 )
-rotation = -0.0726564
+position = Vector2( 152.607, -135.212 )
+rotation = -0.00252928
 texture = ExtResource( 6 )
 
 [node name="animation" type="AnimationPlayer" parent="."]

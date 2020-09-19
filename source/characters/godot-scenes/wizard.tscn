@@ -677,12 +677,12 @@ position = Vector2( -0.612915, -58.5853 )
 scale = Vector2( 0.1, 0.1 )
 
 [node name="korpus" type="Sprite" parent="character"]
-position = Vector2( 15.6827, -17.2141 )
+position = Vector2( 20.3501, -8.9668 )
 scale = Vector2( 1.01023, 1 )
 texture = ExtResource( 1 )
 
 [node name="glowa" type="Sprite" parent="character"]
-position = Vector2( 38.7612, -526.58 )
+position = Vector2( 31.8344, -473.28 )
 texture = ExtResource( 2 )
 
 [node name="noga1" type="Sprite" parent="character"]
@@ -693,20 +693,20 @@ texture = ExtResource( 3 )
 
 [node name="noga2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 72.443, 307.777 )
-rotation = 0.0266981
+position = Vector2( 64.5373, 310.859 )
+rotation = 0.0482102
 texture = ExtResource( 4 )
 
 [node name="reka1" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( -108.946, -156.472 )
-rotation = -0.772003
+position = Vector2( -103.136, -158.5 )
+rotation = -0.681253
 texture = ExtResource( 6 )
 
 [node name="reka2" type="Sprite" parent="character"]
 show_behind_parent = true
-position = Vector2( 151.349, -168.337 )
-rotation = 0.111161
+position = Vector2( 165.581, -170.813 )
+rotation = 0.195938
 texture = ExtResource( 5 )
 
 [node name="animation" type="AnimationPlayer" parent="."]

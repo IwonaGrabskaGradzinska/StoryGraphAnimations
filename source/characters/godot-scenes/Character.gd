@@ -51,5 +51,8 @@ func pickup_elixir():
 func drink_elixir():
 	$animation.play("drink-elixir")
 	
+func pickup_item():
+	$animation.play("pick-up-item")
+
 func stop():
 	$animation.stop()
