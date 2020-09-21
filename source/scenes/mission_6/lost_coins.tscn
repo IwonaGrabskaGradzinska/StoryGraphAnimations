@@ -1,0 +1,105 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://locations/Forest.svg" type="Texture" id=1]
+[ext_resource path="res://characters/godot-scenes/main_character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://image/Items32/monety4.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "scene"
+length = 13.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("main_character:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5, 7.8, 7.9, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.2, 0.2 ), Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 0.2, 0.2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("main_character:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9, 3.3, 5, 7.8, 10.2, 11.3, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 80, 200 ), Vector2( 80, 223.583 ), Vector2( 90, 238.912 ), Vector2( 80, 258.957 ), Vector2( 305.538, 258.957 ), Vector2( 309.538, 224.939 ), Vector2( 311.967, 209.347 ), Vector2( 305.538, 185.251 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("main_character")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.2, 13 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "walk"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("main_character/monety4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 6.7, 7.4, 7.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 20, -50 ), Vector2( 20, -30 ), Vector2( 20, -10 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("main_character/monety4:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 6.7, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("main_character/monety4:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Forest" type="Sprite" parent="."]
+position = Vector2( 200, 150 )
+texture = ExtResource( 1 )
+
+[node name="main_character" parent="." instance=ExtResource( 2 )]
+position = Vector2( 80, 200 )
+scale = Vector2( -0.2, 0.2 )
+
+[node name="monety4" type="Sprite" parent="main_character"]
+visible = false
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "scene"
+anims/scene = SubResource( 1 )

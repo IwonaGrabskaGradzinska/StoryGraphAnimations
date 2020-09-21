@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://characters/godot-scenes/trader.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/godot-scenes/main_character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://image/Items32/ziolaNiebieskie.png" type="Texture" id=4]
+[ext_resource path="res://locations/inkscapetargowisko.svg" type="Texture" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "scene"
+length = 13.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("main_character:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.1, 11.1, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 459.553, 253.984 ), Vector2( 146.391, 253.984 ), Vector2( 146.391, 253.984 ), Vector2( 446.719, 256.957 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("main_character")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2.101, 3.3, 6.6, 11.1, 13 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "walk"
+}, {
+"args": [  ],
+"method": "idle"
+}, {
+"args": [  ],
+"method": "scaredrunk"
+}, {
+"args": [  ],
+"method": "pickup_item"
+}, {
+"args": [  ],
+"method": "walk"
+}, {
+"args": [  ],
+"method": "stop"
+} ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("trader")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.7, 2.9, 5.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "idle"
+}, {
+"args": [  ],
+"method": "talking"
+}, {
+"args": [  ],
+"method": "stop"
+}, {
+"args": [  ],
+"method": "walk"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ziola:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 5.4, 5.8, 7.7, 8.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 110, 200 ), Vector2( 110, 235 ), Vector2( 110, 235 ), Vector2( 110, 200 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ziola:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 5.4, 8.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("main_character:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 10.7, 11 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( -1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("trader:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 5.9, 7.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 87.858, 257.12 ), Vector2( 87.858, 257.12 ), Vector2( -30, 257.12 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("trader:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 5.3, 5.4, 8.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1, 1 ), Vector2( -1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Market" type="Sprite" parent="."]
+position = Vector2( 200, 150 )
+texture = ExtResource( 5 )
+
+[node name="main_character" parent="." instance=ExtResource( 3 )]
+position = Vector2( 146.391, 253.984 )
+
+[node name="trader" parent="." instance=ExtResource( 2 )]
+position = Vector2( -30, 257.12 )
+
+[node name="ziola" type="Sprite" parent="."]
+visible = false
+position = Vector2( 110, 200 )
+texture = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "scene"
+anims/scene = SubResource( 1 )
